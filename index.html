@@ -10,17 +10,20 @@
 	Test Live Server
 	<div id="app">
         <h1>Hello World!</h1>
+		<h1>{{ message }}</h1>
     </div>
 
 	<script>
-		const options = {
-			el: '#app',
-            data: {
-                message: 'Hello Vue!'
+        const app = Vue.createApp({
+            data() {
+                return {
+                    message: 'Hello Vue!'
+                };
             }
-        }
-		const vm = new Vue(options);
-		console.log(vm);
+        });
+
+        const vm = app.mount('#app');
+        console.log(vm);
 	</script>
 	
 </body>
